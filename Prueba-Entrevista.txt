@@ -1,0 +1,40 @@
+import "./styles.css";
+
+// Verificar si una palabra es un palíndromo
+function isPalindrome(word) {
+  word = word.toLowerCase();
+  return word === word.split("").reverse().join("");
+}
+console.log(isPalindrome("anitalavalatina")); // true
+
+// Imprimir n cantidad de dígitos de la serie Fibonacci
+function fibonacci(num) {
+  let fibonacciSerie = [0, 1];
+
+  for (let i = 2; i < num; i++) {
+    fibonacciSerie[i] = fibonacciSerie[i - 1] + fibonacciSerie[i - 2];
+  }
+  console.log(fibonacciSerie.slice(0, num).join(", "));
+}
+fibonacci(5); // 0, 1, 1, 2, 3
+
+/* Fizz Buzz
+Imprimir del 1 al 100, pero cuidando lo siguiente:
+    * Los números múltiplos de 3, imprimir en la consola la palabra 'Fizz'
+    * Los números múltiplos de 5, imprimir 'Buzz'
+    * Los números múltiplos de ambos números, imprimir 'Fizz Buzz'
+ */
+function fizzBuzz() {
+  for (let i = 1; i <= 100; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log("Fizz Buzz");
+    } else if (i % 3 === 0) {
+      console.log("Fizz");
+    } else if (i % 5 === 0) {
+      console.log("Buzz");
+    } else {
+      console.log(i);
+    }
+  }
+}
+fizzBuzz();
